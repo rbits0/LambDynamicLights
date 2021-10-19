@@ -52,10 +52,6 @@ public final class DynamicLightHandlers {
             var world = entity.getEntityWorld();
             return LambDynLights.getLuminanceFromItemStack(entity.getHeldItemStack(), !world.getFluidState(entity.getBlockPos()).isEmpty());
         });
-        registerDynamicLightHandler(EntityType.GLOW_ITEM_FRAME, entity -> {
-            var world = entity.getEntityWorld();
-            return Math.max(14, LambDynLights.getLuminanceFromItemStack(entity.getHeldItemStack(), !world.getFluidState(entity.getBlockPos()).isEmpty()));
-        });
         registerDynamicLightHandler(EntityType.MAGMA_CUBE, entity -> (entity.stretch > 0.6) ? 11 : 8);
         registerDynamicLightHandler(EntityType.SPECTRAL_ARROW, entity -> 8);
         registerDynamicLightHandler(EntityType.GLOW_SQUID,
